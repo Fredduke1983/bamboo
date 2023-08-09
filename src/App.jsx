@@ -1,8 +1,11 @@
 import { Route, Routes } from "react-router";
 import { Layout } from "./components/Layout";
 import { Home } from "./pages/Home/Home";
-// import Users from "./pages/Users/Users";
-// import { Tweets } from "./pages/Tweets/Tweets";
+import { About } from "./pages/About/About";
+import { Service } from "./pages/Service/Service";
+import { Shop } from "./pages/Shop/Shop";
+import { News } from "./pages/News/News";
+
 import { RotatingLines } from "react-loader-spinner";
 import { useState } from "react";
 
@@ -32,15 +35,19 @@ function App() {
           visible={isLoading}
         />
       </div>
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* <Route
-            path="/tweeters"
-            element={<Users toggleIsLoading={toggleIsLoading} />}
+          <Route
+            path="/about"
+            element={<About toggleIsLoading={toggleIsLoading} />}
           />
-          <Route path="/tweets/:id" element={<Tweets />} /> */}
-          {/* <Route path="*" element={<Home />} /> */}
+          <Route path="/service" element={<Service />} />
+          <Route path="/shop" element={<Shop />} />
+
+          <Route path="*" element={<Home />} />
+          <Route path="/news" element={<News />} />
         </Route>
       </Routes>
     </>

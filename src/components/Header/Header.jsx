@@ -1,30 +1,38 @@
 import { NavLink } from "react-router-dom";
-import { HeaderList, HeaderNav, HeaderTitle } from "./Header.styled";
+import {
+  HeaderList,
+  HeaderListItem,
+  HeaderLogo,
+  HeaderNav,
+  HeaderTitle,
+} from "./Header.styled";
+import { UserNav } from "./UserNav";
 
 export const Header = () => {
   return (
     <HeaderNav>
-      <svg className="logo" width="44" height="65">
+      <HeaderLogo className="logo">
         <use href="/src/img/icons.svg#logo"></use>
-      </svg>
+      </HeaderLogo>
       <HeaderTitle>Bamboo paradise</HeaderTitle>
       <HeaderList>
-        <li>
+        <HeaderListItem>
           <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/">About</NavLink>
-        </li>
-        <li>
-          <NavLink to="/">Service</NavLink>
-        </li>
-        <li>
-          <NavLink to="/">Shop</NavLink>
-        </li>
-        <li>
-          <NavLink to="/">News</NavLink>
-        </li>
+        </HeaderListItem>
+        <HeaderListItem>
+          <NavLink to="/about">About</NavLink>
+        </HeaderListItem>
+        <HeaderListItem>
+          <NavLink to="/service">Service</NavLink>
+        </HeaderListItem>
+        <HeaderListItem>
+          <NavLink to="/shop">Shop</NavLink>
+        </HeaderListItem>
+        <HeaderListItem>
+          <NavLink to="/news">News</NavLink>
+        </HeaderListItem>
       </HeaderList>
+      <UserNav />
     </HeaderNav>
   );
 };
