@@ -57,6 +57,7 @@ const BasketBtn = styled.button`
   border: none;
   border-radius: 50%;
   cursor: pointer;
+
   fill: ${colors.accentColor};
   transition: fill 300ms;
   &:hover {
