@@ -7,12 +7,13 @@ import {
   HeaderTitle,
 } from "./Header.styled";
 import { UserNav } from "./UserNav";
+import logo from "../../img/logo.svg";
 
 export const Header = () => {
   return (
     <HeaderNav>
-      <HeaderLogo className="logo">
-        <use href="../../src/img/icons.svg#logo"></use>
+      <HeaderLogo src={logo} className="logo">
+        {/* <use href="../../src/img/icons.svg#logo"></use> */}
       </HeaderLogo>
       <HeaderTitle>Bamboo paradise</HeaderTitle>
       <HeaderList>

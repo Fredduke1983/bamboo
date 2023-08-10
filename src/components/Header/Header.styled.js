@@ -13,7 +13,7 @@ const HeaderNav = styled.header`
   box-shadow: 0px 1px 4px black;
 `;
 
-const HeaderLogo = styled.svg`
+const HeaderLogo = styled.img`
   position: absolute;
   width: 44px;
   height: 65px;
