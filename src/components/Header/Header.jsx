@@ -12,7 +12,7 @@ export const Header = () => {
   return (
     <HeaderNav>
       <HeaderLogo className="logo">
-        <use href="/src/img/icons.svg#logo"></use>
+        <use href="../../src/img/icons.svg#logo"></use>
       </HeaderLogo>
       <HeaderTitle>Bamboo paradise</HeaderTitle>
       <HeaderList>
