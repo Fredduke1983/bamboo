@@ -2,6 +2,7 @@ export const colors = {
   mainTextColor: "#274c5b",
   accentColor: "#3cb371",
   titleColor: "#68A47F",
+  textColor: "#525C60",
 };
 
 // main - text - color: #274c5b; //* for light theme: logo + menu + cards text color *//

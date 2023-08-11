@@ -8,7 +8,7 @@ const HeaderNav = styled.header`
   font-family: "Roboto", sans-serif;
   font-weight: bold;
 
-  padding: 65px 80px;
+  padding: 45px 80px;
   background-color: #00000005;
   box-shadow: 0px 1px 4px black;
 `;

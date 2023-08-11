@@ -4,11 +4,10 @@ import bgRight from "../../img/card-offer-discount.jpg";
 import { colors } from "../../utils/_variables";
 
 const OffersWrapper = styled.section`
-  height: 500px;
   display: flex;
   gap: 50px;
   margin: 0 auto;
-  transform: translateY(30%);
+  padding: 120px 0;
 `;
 
 const CardOffer = styled.div`
