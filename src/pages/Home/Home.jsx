@@ -11,8 +11,8 @@ export const Home = () => {
       <Container>
         <Offers />
         <HomeAbout />
-        <Testimonials />
       </Container>
+      <Testimonials />
     </>
   );
 };
