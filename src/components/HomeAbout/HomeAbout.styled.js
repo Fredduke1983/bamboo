@@ -14,6 +14,8 @@ const HomeAboutTitle = styled.h2`
   font-family: "Yellowtail", cursive;
   font-size: 26px;
   color: ${colors.titleColor};
+
+  margin-bottom: 10px;
 `;
 
 const HomeAboutSubTitle = styled.h3`
@@ -21,6 +23,7 @@ const HomeAboutSubTitle = styled.h3`
   font-weight: 900;
   font-size: 36px;
   color: ${colors.mainTextColor};
+  margin-bottom: 8px;
 `;
 
 const HomeAboutTitleBamboo = styled.h4`
@@ -28,6 +31,7 @@ const HomeAboutTitleBamboo = styled.h4`
   font-weight: 600;
   font-size: 22px;
   color: ${colors.mainTextColor};
+  margin-bottom: 6px;
 `;
 
 const HomeAboutList = styled.ul``;

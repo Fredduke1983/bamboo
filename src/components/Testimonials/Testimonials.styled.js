@@ -49,6 +49,7 @@ const CustomerName = styled.p`
 const TestimonialDescription = styled.p`
   width: 500px;
   font-size: 18px;
+  line-height: 1.35;
 
   margin: 0 auto;
   color: ${colors.textColor};

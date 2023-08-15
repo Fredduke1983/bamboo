@@ -3,6 +3,7 @@ export const colors = {
   accentColor: "#3cb371",
   titleColor: "#68A47F",
   textColor: "#525C60",
+  socialsBgColor: "#EFF6F150",
 };
 
 // main - text - color: #274c5b; //* for light theme: logo + menu + cards text color *//
