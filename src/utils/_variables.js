@@ -4,6 +4,8 @@ export const colors = {
   titleColor: "#68A47F",
   textColor: "#525C60",
   socialsBgColor: "#EFF6F150",
+  lightColor: "#e1d9f0",
+  darkColor: "#ff0000",
 };
 
 // main - text - color: #274c5b; //* for light theme: logo + menu + cards text color *//
