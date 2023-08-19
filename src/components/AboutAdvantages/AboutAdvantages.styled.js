@@ -8,7 +8,7 @@ const AboutAdvantagesList = styled.ul`
   gap: 50px;
 `;
 const AboutAdvantagesItem = styled.li`
-  background-color: #cccccc;
+  background-color: #cccccc50;
   border-radius: 15px;
   width: 200px;
   height: 280px;
