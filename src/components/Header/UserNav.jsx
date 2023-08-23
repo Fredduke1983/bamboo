@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FcSearch } from "react-icons/fc";
 import { IoIosBasket } from "react-icons/io";
 
@@ -13,9 +13,14 @@ import {
 
 export const UserNav = () => {
   const [inputValue, setInputValue] = useState("");
+  const [isEmptyInput, setIsEmptyInput] = useState(true);
   const handleInput = (e) => {
     setInputValue(e.target.value);
   };
+
+  useEffect(() => {
+    inputValue !== "" ? setIsEmptyInput(false) : setIsEmptyInput(true);
+  }, [inputValue]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +30,7 @@ export const UserNav = () => {
     <AsideNav>
       <AsideNavForm>
         <AsideNavInput
+          className={isEmptyInput ? "" : "no-empty"}
           type="text"
           name="input"
           onChange={handleInput}

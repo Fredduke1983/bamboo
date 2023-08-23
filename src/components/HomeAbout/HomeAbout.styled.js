@@ -2,11 +2,14 @@ import styled from "styled-components";
 import { colors } from "../../utils/_variables";
 
 const HomeAboutSection = styled.section`
-  display: flex;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 const HomeAboutImg = styled.img`
   display: block;
+  margin: 0 auto;
   width: 50%;
 `;
 
@@ -14,7 +17,7 @@ const HomeAboutTitle = styled.h2`
   font-family: "Yellowtail", cursive;
   font-size: 26px;
   color: ${colors.titleColor};
-
+  text-align: center;
   margin-bottom: 10px;
 `;
 
@@ -52,7 +55,6 @@ const HomeAboutListItem = styled.li`
 `;
 const HomeAboutDescriptionWrapper = styled.div`
   text-align: justify;
-  width: 400px;
 `;
 
 const HomeAboutDescription = styled.p`

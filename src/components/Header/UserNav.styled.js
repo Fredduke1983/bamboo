@@ -3,24 +3,48 @@ import { colors } from "../../utils/_variables";
 
 const AsideNav = styled.div`
   display: flex;
-  margin-left: 20px;
+  margin-left: 0;
+
+  @media screen and (min-width: 320px) {
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
 `;
 
 const AsideNavForm = styled.form`
   position: relative;
+  align-self: end;
   margin-right: 10px;
 `;
 const AsideNavInput = styled.input`
+  @media screen and (min-width: 1280px) {
+    width: 200px;
+  }
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   padding: 0 40px 0 20px;
   border: 1px solid grey;
   border-radius: 36px;
-  min-width: 250px;
+  width: 20px;
   height: 38px;
   background-color: #fafafa;
+
+  transition: width 1s;
   &:focus {
-    height: 38px;
+    @media screen and (min-width: 320px) {
+      width: 130px;
+    }
+    @media screen and (min-width: 768px) {
+      width: 200px;
+    }
+  }
+  &.no-empty {
+    @media screen and (min-width: 320px) {
+      width: 130px;
+    }
+    @media screen and (min-width: 768px) {
+      width: 200px;
+    }
   }
 `;
 const AsideNavSubmit = styled.button`

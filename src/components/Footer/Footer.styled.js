@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
-  display: flex;
-  justify-content: space-between;
-  padding: 64px 0 60px 0;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    padding: 64px 0 60px 0;
+  }
 
   border-bottom: 1px solid #d4d4d4;
 `;

@@ -13,12 +13,12 @@ import {
 export const Hero = () => {
   let settings = {
     autoplay: true,
-    autoplaySpeed: 8000,
+    autoplaySpeed: 7000,
     dots: true,
     infinite: true,
-    speed: 3000,
+    speed: 2000,
     easing: "linear",
-    pauseOnHover: true,
+    pauseOnHover: false,
     pauseOnFocus: true,
     slidesToShow: 1,
     slidesToScroll: 1,

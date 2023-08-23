@@ -5,6 +5,8 @@ import {
   HeaderLogo,
   HeaderNav,
   HeaderTitle,
+  LogoTitleWrapper,
+  MenuWrapper,
 } from "./Header.styled";
 import { UserNav } from "./UserNav";
 import logo from "../../img/bamboo-logo.png";
@@ -12,8 +14,14 @@ import logo from "../../img/bamboo-logo.png";
 export const Header = () => {
   return (
     <HeaderNav>
-      <HeaderLogo src={logo} className="logo"></HeaderLogo>
-      <HeaderTitle>Bamboo paradise</HeaderTitle>
+      <MenuWrapper>
+        <LogoTitleWrapper>
+          <HeaderLogo src={logo} className="logo"></HeaderLogo>
+          <HeaderTitle>Bamboo paradise</HeaderTitle>
+        </LogoTitleWrapper>
+        <p>burger</p>
+      </MenuWrapper>
+
       <HeaderList>
         <HeaderListItem>
           <NavLink to="/">Home</NavLink>

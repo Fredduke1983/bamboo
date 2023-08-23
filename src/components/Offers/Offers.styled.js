@@ -4,20 +4,26 @@ import bgRight from "../../img/card-offer-discount.jpg";
 import { colors } from "../../utils/_variables";
 
 const OffersWrapper = styled.section`
-  display: flex;
-  gap: 50px;
-  margin: 0 auto;
-  padding: 120px 0;
+  margin: 50px 0;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 0 auto;
+    padding: 120px 0;
+    height: 300px;
+  }
 `;
 
 const CardOffer = styled.div`
-  width: 550px;
-  height: 300px;
   background-color: #0f0fa055;
   border-radius: 25px;
   background-size: cover;
   background-position: center;
-  width: 100%;
+  margin-bottom: 20px;
+  @media screen and (min-width: 1280px) {
+    height: 100%;
+  }
   &.left-card {
     background-image: url(${bgLeft});
   }
@@ -46,16 +52,18 @@ const CardOfferDescription = styled.p`
   font-family: "Roboto", sans-serif;
   font-size: 40px;
   font-weight: 900;
-
+  padding: 20px;
+  @media screen and (max-width: 767px) {
+    font-size: 25px;
+  }
   &.left-card-description {
-    width: 300px;
-    padding: 50px 0 0 70px;
+    /* padding: 50px 0 0 70px; */
     color: ${colors.mainTextColor};
   }
   &.right-card-description {
     color: #fff;
     text-align: end;
-    padding: 50px 70px 0 0;
+    /* padding: 50px 70px 0 0; */
   }
 `;
 

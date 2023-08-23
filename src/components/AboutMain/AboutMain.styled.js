@@ -50,7 +50,7 @@ const ToolWrapper = styled.div`
   }
 `;
 const ToolDescription = styled.p`
-  width: 150px;
+  /* width: 150px; */
 `;
 
 const AboutMainRight = styled.img`

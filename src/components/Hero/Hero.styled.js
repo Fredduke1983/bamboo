@@ -62,13 +62,14 @@ const HeroTitle = styled.h1`
 const HeroDescription = styled.p`
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-  font-size: 36px;
+  font-size: 26px;
   color: ${colors.mainTextColor};
   text-shadow: 1px 1px 3px #fff;
 
   margin: 50px auto;
+  padding: 0 20px;
   display: block;
-  width: 350px;
+  text-align: center;
 `;
 
 const HeroExploreBtn = styled.button`

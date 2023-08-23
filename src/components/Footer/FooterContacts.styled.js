@@ -2,9 +2,11 @@ import styled from "styled-components";
 import { colors } from "../../utils/_variables";
 
 const FooterContacts = styled.div`
-  width: 30%;
-  padding-right: 50px;
-  text-align: end;
+  @media screen and (min-width: 768px) {
+    width: 30%;
+    padding-right: 50px;
+    text-align: end;
+  }
 `;
 
 const FooterContactsTitle = styled.h4`

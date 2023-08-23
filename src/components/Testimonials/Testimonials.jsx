@@ -27,7 +27,6 @@ export const Testimonials = () => {
           professionalism and wonderful plant selection!
         </TestimonialDescription>
       </TestimonialStyle>
-
       <TestimonialBg src={bg} alt="background" />
     </TestimonialWrapper>
   );

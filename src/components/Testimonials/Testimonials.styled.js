@@ -2,17 +2,24 @@ import styled from "styled-components";
 import { colors } from "../../utils/_variables";
 
 const TestimonialWrapper = styled.section`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 120px;
+  margin: 50px 0;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    margin: 120px;
+  }
 
   background-color: #cccccc50;
 `;
 
 const TestimonialStyle = styled.div`
   text-align: center;
-  width: 100%;
-  padding: 60px;
+  padding: 50px;
+  padding-bottom: 0;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const TestimonialTitle = styled.h2`
@@ -47,7 +54,6 @@ const CustomerName = styled.p`
 `;
 
 const TestimonialDescription = styled.p`
-  width: 500px;
   font-size: 18px;
   line-height: 1.35;
 
@@ -55,7 +61,13 @@ const TestimonialDescription = styled.p`
   color: ${colors.textColor};
 `;
 
-const TestimonialBg = styled.img``;
+const TestimonialBg = styled.img`
+  width: 100%;
+
+  @media screen and(min-width: 768px) {
+    width: 50%;
+  }
+`;
 
 export {
   TestimonialWrapper,
