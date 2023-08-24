@@ -1,5 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { TiThMenu } from "react-icons/ti";
+import { RxCross2 } from "react-icons/rx";
+import PropTypes from "prop-types";
+
 import {
+  BurgerMenuBtn,
   HeaderList,
   HeaderListItem,
   HeaderLogo,
@@ -11,7 +16,7 @@ import {
 import { UserNav } from "./UserNav";
 import logo from "../../img/bamboo-logo.png";
 
-export const Header = () => {
+export const Header = ({ isMenuOpen, toggleMenu }) => {
   return (
     <HeaderNav>
       <MenuWrapper>
@@ -19,7 +24,13 @@ export const Header = () => {
           <HeaderLogo src={logo} className="logo"></HeaderLogo>
           <HeaderTitle>Bamboo paradise</HeaderTitle>
         </LogoTitleWrapper>
-        <p>burger</p>
+        <BurgerMenuBtn type="button" onClick={toggleMenu}>
+          {isMenuOpen ? (
+            <RxCross2 className="burger-menu" />
+          ) : (
+            <TiThMenu className="burger-menu" />
+          )}
+        </BurgerMenuBtn>
       </MenuWrapper>
 
       <HeaderList>
@@ -42,4 +53,9 @@ export const Header = () => {
       <UserNav />
     </HeaderNav>
   );
+};
+
+Header.propTypes = {
+  isMenuOpen: PropTypes.bool,
+  toggleMenu: PropTypes.func,
 };

@@ -1,5 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { colors } from "../../utils/_variables";
+
+const rotateAnimation = keyframes`
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  50%{
+    transform:scale(0.5);
+  }
+  100% {
+    transform: rotate(180deg) scale(1);
+  }
+`;
 
 const HeaderNav = styled.header`
   /* position: relative;
@@ -19,13 +31,41 @@ const HeaderNav = styled.header`
     flex-direction: column;
     padding: 25px 0;
   } */
+  .burger-menu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.6s;
+    transform-origin: center;
+    animation: ${rotateAnimation} 0.6s linear;
+  }
 `;
+
+const BurgerMenuBtn = styled.button`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  display: block;
+  z-index: 2;
+  position: relative;
+  margin-top: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+`;
+
 const LogoTitleWrapper = styled.div`
   @media screen and (min-width: 320px) {
     padding: 15px 0;
   }
-  /* display: flex;
-  align-items: center; */
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 const HeaderLogo = styled.img`
@@ -77,4 +117,5 @@ export {
   HeaderListItem,
   LogoTitleWrapper,
   MenuWrapper,
+  BurgerMenuBtn,
 };
