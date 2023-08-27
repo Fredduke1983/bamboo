@@ -2,14 +2,25 @@ import styled from "styled-components";
 import { colors } from "../../utils/_variables";
 
 const AboutMainWrapper = styled.section`
-  display: flex;
-  justify-content: space-around;
+  display: block;
+  margin: 0 auto;
+  padding: 50px 0;
+
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 `;
 
 const AboutMainLeft = styled.div`
-  width: 50%;
-  padding: 50px;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 `;
+
 const AboutMainLeftTitle = styled.h3`
   font-family: "Yellowtail", cursive;
   font-size: 56px;
@@ -53,8 +64,14 @@ const ToolDescription = styled.p`
   /* width: 150px; */
 `;
 
+const AboutMainImgWrapper = styled.div`
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+`;
 const AboutMainRight = styled.img`
-  width: 50%;
+  display: block;
+  width: 100%;
 `;
 
 export {
@@ -66,4 +83,5 @@ export {
   AboutMainLeftTools,
   ToolWrapper,
   ToolDescription,
+  AboutMainImgWrapper,
 };

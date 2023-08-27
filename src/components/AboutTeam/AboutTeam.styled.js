@@ -7,7 +7,7 @@ const AboutTeamDesWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 70px 0;
-  padding: 70px 0;
+  padding: 110px 0;
   background-color: #cccccc60;
 `;
 
@@ -30,13 +30,17 @@ const AboutTeamDescription = styled.p`
 
 const AboutTeamList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 85px;
+  @media screen and (min-width: 1280px) {
+    gap: 45px;
+  }
 `;
 const AboutTeamItem = styled.li``;
 const AboutTeamCardImg = styled.img`
-  width: 340px;
-  height: 400px;
+  max-width: 260px;
+  height: 100%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 `;

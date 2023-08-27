@@ -3,28 +3,41 @@ import { colors } from "../../utils/_variables";
 
 const AboutAdvantagesWrapper = styled.div``;
 const AboutAdvantagesList = styled.ul`
-  display: flex;
-  justify-content: center;
-  gap: 50px;
+  display: block;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
 `;
 const AboutAdvantagesItem = styled.li`
+  display: block;
+  margin: 20px auto;
+  padding-top: 20px;
+  width: 280px;
+  height: 180px;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    height: 280px;
+  }
   background-color: #cccccc50;
   border-radius: 15px;
-  width: 200px;
-  height: 280px;
 `;
 
 const AboutAdvantagesImg = styled.img`
   display: block;
-  margin: 50px auto;
+  margin: 0 auto;
 `;
 const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
+  margin-top: 20px;
 `;
 const AboutAdvantagesTitle = styled.p`
+  text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-size: 26px;

@@ -1,5 +1,6 @@
 import { GiFarmTractor, GiFactory } from "react-icons/gi";
 import {
+  AboutMainImgWrapper,
   AboutMainLeft,
   AboutMainLeftDescription,
   AboutMainLeftTitle,
@@ -32,26 +33,26 @@ export const AboutMain = () => {
           believe that our passionate work and the quality of our bamboo make us
           the best partners for those who appreciate nature and its beauty.
         </AboutMainLeftDescription>
-
-        <AboutMainLeftTitle>Why chose us</AboutMainLeftTitle>
-        <AboutMainLeftDescription>
-          By choosing us, you&apos;re not just selecting bamboo, but also a
-          unique experience of working with plants that are created with love
-          and meticulousness, as if they were our very own.
-        </AboutMainLeftDescription>
-        <AboutMainLeftTools>
-          <ToolWrapper>
-            <GiFarmTractor />
-            <ToolDescription>Modern Agriculture Equipment</ToolDescription>
-          </ToolWrapper>
-          <ToolWrapper>
-            <GiFactory />
-            <ToolDescription>No growth hormones are used</ToolDescription>
-          </ToolWrapper>
-        </AboutMainLeftTools>
       </AboutMainLeft>
-
-      <AboutMainRight src={aboutMainRightBg} />
+      <AboutMainImgWrapper>
+        <AboutMainRight src={aboutMainRightBg} />
+      </AboutMainImgWrapper>
+      <AboutMainLeftTitle>Why chose us</AboutMainLeftTitle>
+      <AboutMainLeftDescription>
+        By choosing us, you&apos;re not just selecting bamboo, but also a unique
+        experience of working with plants that are created with love and
+        meticulousness, as if they were our very own.
+      </AboutMainLeftDescription>
+      <AboutMainLeftTools>
+        <ToolWrapper>
+          <GiFarmTractor />
+          <ToolDescription>Modern Agriculture Equipment</ToolDescription>
+        </ToolWrapper>
+        <ToolWrapper>
+          <GiFactory />
+          <ToolDescription>No growth hormones are used</ToolDescription>
+        </ToolWrapper>
+      </AboutMainLeftTools>
     </AboutMainWrapper>
   );
 };
