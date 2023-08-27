@@ -7,7 +7,6 @@ const AsideNav = styled.div`
 
   @media screen and (min-width: 320px) {
     justify-content: flex-end;
-    margin-bottom: 15px;
   }
 `;
 

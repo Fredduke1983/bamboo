@@ -13,24 +13,19 @@ const rotateAnimation = keyframes`
   }
 `;
 
+const MenuNavigationWrapper = styled.div``;
+
 const HeaderNav = styled.header`
-  /* position: relative;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
+  padding: 20px 0;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
   font-family: "Roboto", sans-serif;
   font-weight: bold;
 
-  padding: 45px 0;
-
-  @media screen and (max-width: 1279px) {
-    gap: 20px;
-  }
-  @media screen and (max-width: 767px) {
-    flex-direction: column;
-    padding: 25px 0;
-  } */
   .burger-menu {
     position: absolute;
     width: 100%;
@@ -60,7 +55,7 @@ const BurgerMenuBtn = styled.button`
 
 const LogoTitleWrapper = styled.div`
   @media screen and (min-width: 320px) {
-    padding: 15px 0;
+    padding-bottom: 15px;
   }
   @media screen and (min-width: 768px) {
     display: flex;
@@ -76,15 +71,6 @@ const HeaderTitle = styled.h1`
   font-size: 38px;
 
   color: ${colors.mainTextColor};
-  /* margin-right: 80px;
-  margin-left: 6px;
-
-  @media screen and (max-width: 767px) {
-    flex-direction: column;
-    padding: 25px 0;
-    margin-right: 0;
-    margin-left: 0;
-  } */
 `;
 
 const MenuWrapper = styled.div`
@@ -95,6 +81,7 @@ const MenuWrapper = styled.div`
 const HeaderList = styled.ul`
   display: none;
   @media screen and (min-width: 768px) {
+    padding-left: 20px;
     display: flex;
     gap: 15px;
     font-size: 20px;
@@ -110,6 +97,7 @@ const HeaderListItem = styled.li`
 `;
 
 export {
+  MenuNavigationWrapper,
   HeaderNav,
   HeaderList,
   HeaderTitle,
