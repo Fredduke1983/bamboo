@@ -4,6 +4,7 @@ import {
   CustomerImg,
   CustomerName,
   TestimonialBg,
+  TestimonialBgWrapper,
   TestimonialDescription,
   TestimonialStyle,
   TestimonialSubTitle,
@@ -27,7 +28,9 @@ export const Testimonials = () => {
           professionalism and wonderful plant selection!
         </TestimonialDescription>
       </TestimonialStyle>
-      <TestimonialBg src={bg} alt="background" />
+      <TestimonialBgWrapper>
+        <TestimonialBg src={bg} alt="background" />
+      </TestimonialBgWrapper>
     </TestimonialWrapper>
   );
 };

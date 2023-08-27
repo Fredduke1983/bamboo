@@ -13,7 +13,8 @@ const Container = styled.div`
 
   // tablet
   @media screen and (min-width: 768px) {
-    width: 768px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   // desktop

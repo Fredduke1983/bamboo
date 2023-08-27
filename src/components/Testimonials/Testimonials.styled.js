@@ -7,7 +7,7 @@ const TestimonialWrapper = styled.section`
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;
-    margin: 120px;
+    margin: 120px 0;
   }
 
   background-color: #cccccc50;
@@ -63,8 +63,12 @@ const TestimonialDescription = styled.p`
 
 const TestimonialBg = styled.img`
   width: 100%;
+`;
 
-  @media screen and(min-width: 768px) {
+const TestimonialBgWrapper = styled.div`
+  display: block;
+  width: 100%;
+  @media screen and (min-width: 768px) {
     width: 50%;
   }
 `;
@@ -78,4 +82,5 @@ export {
   TestimonialDescription,
   CustomerName,
   TestimonialBg,
+  TestimonialBgWrapper,
 };

@@ -4,13 +4,28 @@ import { colors } from "../../utils/_variables";
 const HomeAboutSection = styled.section`
   @media screen and (min-width: 768px) {
     display: flex;
+    flex-wrap: wrap;
   }
 `;
 
 const HomeAboutImg = styled.img`
   display: block;
-  margin: 0 auto;
-  width: 50%;
+  width: 100%;
+`;
+
+const HomeAboutBgWrapper = styled.div`
+  display: block;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+`;
+
+const HomeAboutWrapper = styled.div`
+  display: block;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const HomeAboutTitle = styled.h2`
@@ -45,12 +60,15 @@ const HomeAboutListItem = styled.li`
   margin-top: 20px;
 
   .about-icon-style {
-    width: 40px;
-    height: 40px;
-    display: block;
-    background-color: #cccccc35;
-    border-radius: 10px;
-    margin-right: 12px;
+    display: none;
+    @media screen and (min-width: 1024px) {
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-color: #cccccc35;
+      border-radius: 10px;
+      margin-right: 12px;
+    }
   }
 `;
 const HomeAboutDescriptionWrapper = styled.div`
@@ -101,4 +119,6 @@ export {
   HomeAboutListItem,
   HomeAboutDescriptionWrapper,
   HomeAboutBtn,
+  HomeAboutBgWrapper,
+  HomeAboutWrapper,
 };
