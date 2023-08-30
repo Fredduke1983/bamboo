@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import bgAboutHero from "../../../img/about-hero-bg2.jpg";
+import bgShopHero from "../../../img/shop/bamboo-bg.jpg";
 import { colors } from "../../../utils/_variables";
 
-const AboutHeroWrapper = styled.section`
+const ShopHeroWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,10 +11,10 @@ const AboutHeroWrapper = styled.section`
   min-height: 500px;
   width: 100%;
 
-  background-image: url(${bgAboutHero});
+  background-image: url(${bgShopHero});
 `;
 
-const AboutHeroTitle = styled.h2`
+const ShopHeroTitle = styled.h2`
   text-align: center;
   text-shadow: 1px 1px #000;
 
@@ -23,4 +23,4 @@ const AboutHeroTitle = styled.h2`
   color: ${colors.titleColor};
 `;
 
-export { AboutHeroWrapper, AboutHeroTitle };
+export { ShopHeroWrapper, ShopHeroTitle };

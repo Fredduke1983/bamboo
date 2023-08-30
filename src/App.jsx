@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router";
 import { Layout } from "./components/Layout";
 import { Home } from "./pages/Home/Home";
 import { About } from "./pages/About/About";
-import { Service } from "./pages/Service/Service";
 import { Shop } from "./pages/Shop/Shop";
 import { News } from "./pages/News/News";
 
@@ -43,7 +42,6 @@ function App() {
             path="/about"
             element={<About toggleIsLoading={toggleIsLoading} />}
           />
-          <Route path="/service" element={<Service />} />
           <Route path="/shop" element={<Shop />} />
 
           <Route path="*" element={<Home />} />

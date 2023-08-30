@@ -4,8 +4,7 @@ import { colors } from "../../utils/_variables";
 const AboutMainWrapper = styled.section`
   display: block;
   margin: 0 auto;
-  padding: 50px 0;
-
+  padding: 20px 0;
   text-align: center;
 
   @media screen and (min-width: 768px) {
@@ -16,6 +15,8 @@ const AboutMainWrapper = styled.section`
 `;
 
 const AboutMainLeft = styled.div`
+  border-top: 2px solid green;
+
   @media screen and (min-width: 768px) {
     width: 50%;
   }

@@ -16,7 +16,7 @@ export const AboutMain = () => {
   return (
     <AboutMainWrapper>
       <AboutMainLeft>
-        <AboutMainLeftTitle>About us</AboutMainLeftTitle>
+        <AboutMainLeftTitle></AboutMainLeftTitle>
         <AboutMainLeftDescription>
           There are several compelling reasons to choose us. We are a team of
           highly skilled professionals specializing in the cultivation and sale

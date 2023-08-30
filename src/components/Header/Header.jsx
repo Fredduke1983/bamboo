@@ -43,9 +43,6 @@ export const Header = ({ isMenuOpen, toggleMenu }) => {
             <NavLink to="/about">About</NavLink>
           </HeaderListItem>
           <HeaderListItem>
-            <NavLink to="/service">Service</NavLink>
-          </HeaderListItem>
-          <HeaderListItem>
             <NavLink to="/shop">Shop</NavLink>
           </HeaderListItem>
           <HeaderListItem>
