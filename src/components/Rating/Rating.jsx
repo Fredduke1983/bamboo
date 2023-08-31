@@ -2,8 +2,6 @@ import PropTypes from "prop-types";
 import { RatingCounter, RatingStars } from "./Rating.styled";
 
 export const Rating = ({ value, onRatingChange, selectedRating }) => {
-  console.log("VALUE=", value);
-
   return (
     <RatingStars className="rating-stars">
       <input

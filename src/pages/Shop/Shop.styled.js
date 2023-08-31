@@ -12,9 +12,17 @@ const ShopList = styled.ul`
 const ShopItem = styled.li`
   position: relative;
   display: block;
-  width: 20%;
   border-radius: 5px;
   background: linear-gradient(45deg, #ffffff80, #9198e560);
+  @media screen and (min-width: 320px) {
+    width: 200px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 250px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 300px;
+  }
 `;
 const ShopCardCategory = styled.p`
   position: absolute;

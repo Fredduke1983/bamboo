@@ -1,12 +1,9 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  /* margin: 0 auto;
-  width: 1200px; */
-
   //mobile
   @media screen and (min-width: 320px) {
-    margin: 0 auto;
+    margin: 20px auto;
     padding-left: 16px;
     padding-right: 16px;
   }

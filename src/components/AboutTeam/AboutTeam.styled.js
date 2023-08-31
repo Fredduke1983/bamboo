@@ -6,26 +6,39 @@ const AboutTeamDesWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 70px 0;
-  padding: 110px 0;
+
   background-color: #cccccc60;
+  @media screen and (min-width: 320px) {
+    padding: 70px 0;
+  }
 `;
 
 const AboutTeamTitle = styled.h2`
   align-self: center;
   font-family: "Yellowtail", cursive;
-  font-size: 26px;
+
   color: ${colors.titleColor};
   text-shadow: 1px 1px 1px grey;
+  @media screen and (min-width: 320px) {
+    font-size: 30px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+  }
 `;
 
 const AboutTeamDescription = styled.p`
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-  font-size: 60px;
   color: ${colors.mainTextColor};
   text-shadow: 1px 1px 3px #fff;
   margin-bottom: 30px;
+  @media screen and (min-width: 320px) {
+    font-size: 40px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 60px;
+  }
 `;
 
 const AboutTeamList = styled.ul`

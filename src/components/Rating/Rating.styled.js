@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 const RatingStars = styled.div`
-  z-index: 2;
+  z-index: 1;
   display: block;
   text-align: center;
   width: 100%;
   position: relative;
+  padding: 3px 0;
 
   label {
     width: 3vmin;

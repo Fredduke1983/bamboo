@@ -12,10 +12,12 @@ const ModalMenuWrapper = styled.div`
 
   &.open {
     opacity: 1;
+    z-index: 1;
     transform: translateY(0);
   }
   &.close {
     opacity: 0;
+    z-index: -1;
     transform: translateY(100%);
   }
 `;
