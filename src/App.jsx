@@ -7,6 +7,7 @@ import { News } from "./pages/News/News";
 
 import { RotatingLines } from "react-loader-spinner";
 import { useState } from "react";
+import { OneCardDetail } from "./components/OneCardDetail/OneCardDetail";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -43,7 +44,7 @@ function App() {
             element={<About toggleIsLoading={toggleIsLoading} />}
           />
           <Route path="/shop" element={<Shop />} />
-
+          <Route path="/shop/:id" element={<OneCardDetail />} />
           <Route path="*" element={<Home />} />
           <Route path="/news" element={<News />} />
         </Route>

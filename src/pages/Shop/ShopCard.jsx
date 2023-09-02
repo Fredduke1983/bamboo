@@ -1,38 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import PropTypes from "prop-types";
-import { Rating } from "../../components/Rating/Rating";
+import { Link } from "react-router-dom";
 
 import {
+  CardBottomContainer,
   CardDescriptionWrapper,
   ShopCardCategory,
   ShopCardImg,
   ShopCardPrice,
   ShopCardTitle,
   ShopItem,
+  StarsContainer,
 } from "./Shop.styled";
 
-export const ShopCard = ({ index, name, img, price, onRatingChange }) => {
-  const [selectedRating, setSelectedRating] = useState("0");
+export const ShopCard = ({ index, name, img, price, rating }) => {
+  const [countStars, setCountStars] = useState(null);
 
-  const handleRatingChange = (event) => {
-    const newValue =
-      event.target.value === selectedRating ? null : event.target.value;
-    setSelectedRating(newValue);
-    onRatingChange(index, event.target);
-  };
+  useEffect(() => {
+    if (Number(rating) <= 1) {
+      setCountStars(0);
+    } else if (rating > 1) {
+      setCountStars(Math.floor(rating / 2));
+    }
+  }, [rating]);
 
   return (
     <ShopItem>
       <ShopCardCategory>plant</ShopCardCategory>
-      <ShopCardImg src={img} />
+      <Link to={`/shop/${index}`}>
+        <ShopCardImg src={img} />
+      </Link>
+
       <CardDescriptionWrapper>
         <ShopCardTitle>{name}</ShopCardTitle>
-        <ShopCardPrice>Price: {price}UAH</ShopCardPrice>
-        <Rating
-          value={index}
-          selectedRating={selectedRating}
-          onRatingChange={handleRatingChange}
-        />
+
+        {countStars >= 0 && (
+          <CardBottomContainer>
+            <StarsContainer>
+              {countStars > 0 ? <AiOutlineStar /> : <AiFillStar />}
+              {countStars > 1 ? <AiOutlineStar /> : <AiFillStar />}
+              {countStars > 2 ? <AiOutlineStar /> : <AiFillStar />}
+              {countStars > 3 ? <AiOutlineStar /> : <AiFillStar />}
+              {countStars > 4 ? <AiOutlineStar /> : <AiFillStar />}
+            </StarsContainer>
+            <ShopCardPrice>Price: {price}UAH</ShopCardPrice>
+          </CardBottomContainer>
+        )}
       </CardDescriptionWrapper>
     </ShopItem>
   );
@@ -44,6 +58,7 @@ ShopCard.propTypes = {
   index: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
+  rating: PropTypes.string.isRequired,
   onRatingChange: PropTypes.func,
 };

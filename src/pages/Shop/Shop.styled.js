@@ -12,7 +12,7 @@ const ShopList = styled.ul`
 const ShopItem = styled.li`
   position: relative;
   display: block;
-  border-radius: 5px;
+  border-radius: 15px;
   background: linear-gradient(45deg, #ffffff80, #9198e560);
   @media screen and (min-width: 320px) {
     width: 200px;
@@ -36,7 +36,8 @@ const ShopCardCategory = styled.p`
 const ShopCardImg = styled.img`
   display: block;
   width: 100%;
-  border-radius: inherit;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 `;
 const ShopCardTitle = styled.h3`
   text-align: center;
@@ -52,14 +53,24 @@ const ShopCardPrice = styled.p`
   font-weight: 600;
   font-size: 10px;
   color: ${colors.mainTextColor};
-  padding: 7px 0 2px 0;
-  border-top: 1px solid #cccccc50;
 `;
 
 const CardDescriptionWrapper = styled.div`
   display: block;
   padding: 0 10px;
 `;
+
+const CardBottomContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 7px 0 5px 0;
+  margin: 0 4px;
+  border-top: 1px solid #cccccc50;
+`;
+
+const StarsContainer = styled.div``;
 
 export {
   ShopStyled,
@@ -70,4 +81,6 @@ export {
   ShopCardTitle,
   ShopCardPrice,
   CardDescriptionWrapper,
+  StarsContainer,
+  CardBottomContainer,
 };
