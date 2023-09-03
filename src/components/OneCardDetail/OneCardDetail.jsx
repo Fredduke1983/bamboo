@@ -25,6 +25,7 @@ export const OneCardDetail = () => {
   const [products, setProducts] = useState([]);
   const [selectedRating, setSelectedRating] = useState("0");
   const [quantityValue, setQuantityValue] = useState("1");
+  const [totalPrice, setTotalPrice] = useState(null);
 
   const id = useParams();
 
@@ -43,8 +44,9 @@ export const OneCardDetail = () => {
         return item.id == id.id;
       });
       setProductDetail(productDatailed);
+      setTotalPrice(productDatailed[0].price * quantityValue);
     });
-  }, [id]);
+  }, [id, quantityValue]);
 
   const handleRatingChange = (event) => {
     const newValue =
@@ -78,7 +80,7 @@ export const OneCardDetail = () => {
             />
           )}
           <CardDescriptionWrapper>
-            <CardName>Bamboo1</CardName>
+            <CardName>{productDetail[0]?.name}</CardName>
 
             <CardPrice>
               Price: <span> {productDetail[0]?.price}UAH</span>
@@ -100,6 +102,9 @@ export const OneCardDetail = () => {
 
               <CardBtnAdd type="submit">add to cart</CardBtnAdd>
             </CardBottomForm>
+            <CardPrice className="total">
+              Total: <span> {totalPrice}UAH</span>
+            </CardPrice>
           </CardDescriptionWrapper>
         </RatingDesWrapper>
       </CardWrapper>

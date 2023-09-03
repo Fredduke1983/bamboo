@@ -63,20 +63,25 @@ const CardName = styled.h3`
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 8px;
+
+  margin-top: 18px;
+  margin-bottom: 18px;
 `;
 const CardPrice = styled.p`
-  margin-bottom: 8px;
-
   span {
     font-weight: bold;
     font-size: 15px;
     color: ${colors.mainTextColor};
   }
+
+  &.total {
+    margin: 7px 0;
+  }
 `;
 const CardDescription = styled.p`
   color: ${colors.textColor};
-  margin-bottom: 8px;
+  margin-top: 18px;
+  margin-bottom: 18px;
 `;
 const CardTitleQuantity = styled.p`
   font-family: "Roboto", sans-serif;
@@ -85,21 +90,35 @@ const CardTitleQuantity = styled.p`
 `;
 const CardQuantity = styled.input`
   margin: 0 10px;
-  width: 50px;
-  height: 50px;
-  background-color: #cccccc50;
+  width: 35px;
+  height: 35px;
+  background-color: #cccccc20;
   text-align: center;
   border-radius: 5px;
-  @media screen and(min-width: 320px) {
+  border: none;
+  box-shadow: -2px 0px 2px #cccccc;
+  @media screen and(min-width: 768px) {
+    width: 50px;
+    height: 50px;
   }
 `;
 const CardBtnAdd = styled.button`
   margin: 0 10px;
-  width: 50px;
-  height: 50px;
-  background-color: #cccccc50;
+  width: 70px;
+  height: 35px;
+  background-color: #cccccc20;
   text-align: center;
   border-radius: 5px;
+  border: none;
+  box-shadow: 2px 0px 2px #cccccc;
+  cursor: pointer;
+  color: ${colors.accentColor};
+  font-weight: 600;
+  transition: box-shadow 250ms, font-size 250ms;
+  &:active {
+    box-shadow: 0px 0px 0px #cccccc;
+    font-size: 12px;
+  }
 `;
 const CardBottomForm = styled.form`
   display: flex;
