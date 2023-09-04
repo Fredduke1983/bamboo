@@ -41,7 +41,7 @@ export const UserNav = () => {
         </AsideNavSubmit>
       </AsideNavForm>
       <AsideNavBasket>
-        <BasketBtn type="button">
+        <BasketBtn to={`/basket`} type="button">
           <IoIosBasket size={25} fill={"inherit"} />
         </BasketBtn>
         0

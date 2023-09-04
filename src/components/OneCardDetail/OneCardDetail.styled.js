@@ -34,8 +34,10 @@ const OneCardDetailTitle = styled.h2`
 `;
 const CardWrapper = styled.div`
   @media screen and (min-width: 320px) {
+    padding: 16px;
+    max-width: 360px;
     display: block;
-    margin: 16px;
+    margin: 0 auto;
   }
   @media screen and (min-width: 768px) {
     display: flex;

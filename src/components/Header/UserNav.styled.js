@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { colors } from "../../utils/_variables";
 
 const AsideNav = styled.div`
@@ -67,27 +68,29 @@ const AsideNavSubmit = styled.button`
 
 const AsideNavBasket = styled.div`
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
   border: 1px solid grey;
   border-radius: 36px;
   width: 70px;
 `;
 
-const BasketBtn = styled.button`
+const BasketBtn = styled(NavLink)`
   background: none;
-  width: 39px;
-  height: 39px;
+
   border: none;
   border-radius: 50%;
   cursor: pointer;
 
   fill: ${colors.accentColor};
-  transition: fill 300ms;
+  transition: fill 300ms, scale 300ms;
   &:hover {
     fill: #3c9371;
+    scale: 1.2;
   }
   &:active {
     fill: #3cb000;
+    scale: 1.1;
   }
 `;
 
