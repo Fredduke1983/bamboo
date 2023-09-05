@@ -60,6 +60,7 @@ export const OneCardDetail = () => {
     event.preventDefault();
     console.log(event.target);
   };
+
   return (
     <OneCardDetailWrapper>
       <OneCardDetailHero>
@@ -94,8 +95,8 @@ export const OneCardDetail = () => {
               <CardTitleQuantity>Quantity:</CardTitleQuantity>
               <CardQuantity
                 type="text"
-                id="username"
-                name="username"
+                id={productDetail[0]?.id}
+                name={productDetail[0]?.name}
                 value={quantityValue}
                 onChange={handleQuantityChange}
               />
