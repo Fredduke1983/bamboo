@@ -57,6 +57,11 @@ const BasketItemDelete = styled.button`
   }
 `;
 
+const TotalCostOfProducts = styled.p`
+  text-align: center;
+  font-weight: 900;
+`;
+
 export {
   BasketMainWrapper,
   BasketCustomerList,
@@ -67,4 +72,5 @@ export {
   BasketItemName,
   ItemImgWrapper,
   BasketItemDelete,
+  TotalCostOfProducts,
 };

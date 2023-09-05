@@ -19,6 +19,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../fetches/getProducts";
 import { Rating } from "../../components/Rating/Rating";
+import { selectProductsAdded } from "../../redux/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { addToAddedProducts } from "../../redux/Slices/ProductsSlice";
 
 export const OneCardDetail = () => {
   const [productDetail, setProductDetail] = useState([]);
@@ -28,6 +31,7 @@ export const OneCardDetail = () => {
   const [totalPrice, setTotalPrice] = useState(null);
 
   const id = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (products.length < 1) {
@@ -58,7 +62,12 @@ export const OneCardDetail = () => {
   };
   const handleQuantitySubmit = (event) => {
     event.preventDefault();
-    console.log(event.target);
+    const xProductDetail = [];
+
+    for (let i = 0; i < quantityValue; i++) {
+      xProductDetail.push(...productDetail);
+    }
+    dispatch(addToAddedProducts(xProductDetail));
   };
 
   return (

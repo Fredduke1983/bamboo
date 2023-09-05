@@ -10,10 +10,14 @@ import {
   AsideNavSubmit,
   BasketBtn,
 } from "./UserNav.styled";
+import { useSelector } from "react-redux";
+import { selectProductsAdded } from "../../redux/selectors";
 
 export const UserNav = () => {
   const [inputValue, setInputValue] = useState("");
   const [isEmptyInput, setIsEmptyInput] = useState(true);
+  const addedProducts = useSelector(selectProductsAdded);
+
   const handleInput = (e) => {
     setInputValue(e.target.value);
   };
@@ -44,7 +48,7 @@ export const UserNav = () => {
         <BasketBtn to={`/basket`} type="button">
           <IoIosBasket size={25} fill={"inherit"} />
         </BasketBtn>
-        0
+        {addedProducts.length}
       </AsideNavBasket>
     </AsideNav>
   );

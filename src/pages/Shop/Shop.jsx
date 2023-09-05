@@ -3,18 +3,26 @@ import { ShopHero } from "../../components/Hero/ShopHero/ShopHero";
 import { Container } from "../../utils/_container";
 import { ShopList, ShopStyled } from "./Shop.styled";
 import { ShopCard } from "./ShopCard";
-import { getProducts } from "../../fetches/getProducts";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProductsThunk } from "../../redux/reducers";
+import { selectProducts } from "../../redux/selectors";
 
 export const Shop = () => {
   const [products, setProducts] = useState([]);
 
+  const dispatch = useDispatch();
+  const allProducts = useSelector(selectProducts);
+
+  useEffect(() => {
+    dispatch(getAllProductsThunk());
+  }, [dispatch]);
+
   useEffect(() => {
     if (products.length < 1) {
-      getProducts().then((products) => {
-        setProducts(products);
-      });
+      setProducts(allProducts);
     }
-  }, [products.length]);
+  }, [allProducts, products.length]);
+
   return (
     <ShopStyled>
       <ShopHero />
