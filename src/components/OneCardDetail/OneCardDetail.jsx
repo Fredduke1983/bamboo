@@ -1,3 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
+import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import {
   CardBottomForm,
   CardBtnAdd,
@@ -15,12 +20,9 @@ import {
   OneCardDetailWrapper,
   RatingDesWrapper,
 } from "./OneCardDetail.styled";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+
 import { getProducts } from "../../fetches/getProducts";
 import { Rating } from "../../components/Rating/Rating";
-import { selectProductsAdded } from "../../redux/selectors";
-import { useDispatch, useSelector } from "react-redux";
 import { addToAddedProducts } from "../../redux/Slices/ProductsSlice";
 
 export const OneCardDetail = () => {
@@ -63,13 +65,14 @@ export const OneCardDetail = () => {
   const handleQuantitySubmit = (event) => {
     event.preventDefault();
     const xProductDetail = [];
+    let oneProduct = {};
 
     for (let i = 0; i < quantityValue; i++) {
-      xProductDetail.push(...productDetail);
+      oneProduct = { ...productDetail, keyId: uuidv4() };
+      xProductDetail.push(oneProduct);
     }
     dispatch(addToAddedProducts(xProductDetail));
   };
-
   return (
     <OneCardDetailWrapper>
       <OneCardDetailHero>

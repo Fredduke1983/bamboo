@@ -1,5 +1,4 @@
 import { TiDeleteOutline } from "react-icons/ti";
-import { v4 as uuidv4 } from "uuid";
 
 import {
   BasketCustomerItem,
@@ -14,33 +13,47 @@ import {
   TotalCostOfProducts,
 } from "./BasketMain.styled";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectProductsAdded } from "../../redux/selectors";
 import { useEffect, useState } from "react";
+import { deleteFromAddedProducts } from "../../redux/Slices/ProductsSlice";
 
 export const BasketMain = () => {
   const addedProducts = useSelector(selectProductsAdded);
   const [products, setProducts] = useState([]);
-  const total = products.reduce((acc, el) => acc + Number(el.price), 0);
+  const dispatch = useDispatch();
+
+  const total = products.reduce((acc, el) => acc + Number(el[0].price), 0);
   useEffect(() => {
     if (addedProducts.length > 0) {
       setProducts(addedProducts);
     }
+    if (addedProducts.length === 0) {
+      setProducts([]);
+    }
   }, [addedProducts]);
+
+  const handleDeleteItem = (event) => {
+    dispatch(deleteFromAddedProducts(event.currentTarget.id));
+  };
 
   return (
     <BasketMainWrapper>
       <BasketCustomerList>
         {products.map((product) => {
           return (
-            <BasketCustomerItem key={uuidv4()}>
+            <BasketCustomerItem key={product.keyId}>
               <ItemImgWrapper>
-                <BasketItemImg src={product.img} />
-                <BasketItemName>{product.name}</BasketItemName>
+                <BasketItemImg src={product[0].img} />
+                <BasketItemName>{product[0].name}</BasketItemName>
               </ItemImgWrapper>
               <BasketItemQuantity>x1</BasketItemQuantity>=
-              <BasketItemTotal>{product.price}</BasketItemTotal>UAH
-              <BasketItemDelete type="button">
+              <BasketItemTotal>{product[0].price}</BasketItemTotal>UAH
+              <BasketItemDelete
+                id={product.keyId}
+                type="button"
+                onClick={handleDeleteItem}
+              >
                 <TiDeleteOutline />
               </BasketItemDelete>
             </BasketCustomerItem>
