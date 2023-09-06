@@ -28,9 +28,9 @@ export const Header = ({ isMenuOpen, toggleMenu }) => {
           </LogoTitleWrapper>
           <BurgerMenuBtn type="button" onClick={toggleMenu}>
             {isMenuOpen ? (
-              <RxCross2 className="burger-menu" />
+              <RxCross2 className="burger-menu close" />
             ) : (
-              <TiThMenu className="burger-menu" />
+              <TiThMenu className="burger-menu open" />
             )}
           </BurgerMenuBtn>
         </MenuWrapper>

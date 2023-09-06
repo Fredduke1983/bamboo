@@ -32,13 +32,19 @@ const HeaderNav = styled.header`
     height: 100%;
     top: 0;
     left: 0;
+
     transition: transform 0.6s;
     transform-origin: center;
     animation: ${rotateAnimation} 0.6s linear;
+
+    &.close {
+      color: ${colors.lightColor};
+    }
   }
 `;
 
 const BurgerMenuBtn = styled.button`
+  cursor: pointer;
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -50,6 +56,7 @@ const BurgerMenuBtn = styled.button`
   width: 40px;
   height: 40px;
   background-color: transparent;
+
   border: none;
 `;
 
