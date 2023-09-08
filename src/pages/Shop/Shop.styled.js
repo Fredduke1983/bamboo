@@ -35,6 +35,7 @@ const ShopCardCategory = styled.p`
 `;
 const ShopCardImg = styled.img`
   display: block;
+  height: 230px;
   width: 100%;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
