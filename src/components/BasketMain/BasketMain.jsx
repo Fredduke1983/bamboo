@@ -23,7 +23,10 @@ export const BasketMain = () => {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
 
-  const total = products.reduce((acc, el) => acc + Number(el[0].price), 0);
+  const total = products.reduce(
+    (acc, el) => acc + Number(el[0].price) * Number(el.qty),
+    0
+  );
   useEffect(() => {
     if (addedProducts.length > 0) {
       setProducts(addedProducts);
@@ -47,8 +50,11 @@ export const BasketMain = () => {
                 <BasketItemImg src={product[0].img} />
                 <BasketItemName>{product[0].name}</BasketItemName>
               </ItemImgWrapper>
-              <BasketItemQuantity>x1</BasketItemQuantity>=
-              <BasketItemTotal>{product[0].price}</BasketItemTotal>UAH
+              <BasketItemQuantity>x{product.qty}</BasketItemQuantity>=
+              <BasketItemTotal>
+                {Number(product[0].price) * Number(product.qty)}
+              </BasketItemTotal>
+              UAH
               <BasketItemDelete
                 id={product.keyId}
                 type="button"

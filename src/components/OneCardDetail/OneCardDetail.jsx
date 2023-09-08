@@ -67,10 +67,9 @@ export const OneCardDetail = () => {
     const xProductDetail = [];
     let oneProduct = {};
 
-    for (let i = 0; i < quantityValue; i++) {
-      oneProduct = { ...productDetail, keyId: uuidv4() };
-      xProductDetail.push(oneProduct);
-    }
+    oneProduct = { ...productDetail, keyId: uuidv4(), qty: quantityValue };
+    xProductDetail.push(oneProduct);
+
     dispatch(addToAddedProducts(xProductDetail));
   };
   return (
