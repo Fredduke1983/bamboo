@@ -2,6 +2,8 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   CardBottomForm,
@@ -47,7 +49,7 @@ export const OneCardDetail = () => {
 
     getProducts().then((products) => {
       const productDatailed = products.filter((item) => {
-        return item.id == id.id;
+        return item._id == id.id;
       });
       setProductDetail(productDatailed);
       setTotalPrice(productDatailed[0].price * quantityValue);
@@ -59,10 +61,13 @@ export const OneCardDetail = () => {
       event.target.value === selectedRating ? null : event.target.value;
     setSelectedRating(newValue);
   };
+
   const handleQuantityChange = (event) => {
     setQuantityValue(event.target.value);
   };
+
   const handleQuantitySubmit = (event) => {
+    toast(`You added ${quantityValue} items`);
     event.preventDefault();
     const xProductDetail = [];
     let oneProduct = {};
@@ -72,8 +77,10 @@ export const OneCardDetail = () => {
 
     dispatch(addToAddedProducts(xProductDetail));
   };
+
   return (
     <OneCardDetailWrapper>
+      <ToastContainer />
       <OneCardDetailHero>
         <OneCardDetailTitle>Product Detail</OneCardDetailTitle>
       </OneCardDetailHero>

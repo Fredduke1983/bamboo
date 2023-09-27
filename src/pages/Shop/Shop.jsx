@@ -29,12 +29,12 @@ export const Shop = () => {
       <Container>
         <ShopList>
           {products.map((product) => {
-            const { id, img, name, price, rating } = product;
+            const { _id, img, name, price, rating } = product;
 
             return (
               <ShopCard
-                key={id}
-                index={id}
+                key={_id}
+                index={_id}
                 name={name}
                 img={img}
                 price={price}

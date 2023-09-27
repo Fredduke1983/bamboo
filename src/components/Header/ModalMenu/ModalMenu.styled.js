@@ -7,8 +7,8 @@ const ModalMenuWrapper = styled.div`
   left: 0;
   top: 0;
   overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-image: url(${bg});
   color: ${colors.lightColor};
   background-size: cover;
