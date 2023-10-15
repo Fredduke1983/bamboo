@@ -7,6 +7,7 @@ import {
   RegistrationSubmit,
   RegistrationTitle,
 } from "./Registration.styled";
+import { registrationUser } from "../../fetches/users/registrationUser";
 
 export default function Registration() {
   const {
@@ -15,12 +16,26 @@ export default function Registration() {
     // watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log("DATA=", data);
+  const onSubmit = async (data) => {
+    const res = await registrationUser(data);
+    if (!isNaN(res.data.statusCode)) {
+      console.log(res.data.errorMsg);
+    } else {
+      console.log(res.data);
+    }
+  };
 
   return (
     <RegistrationFormWrapper>
       <RegistrationTitle>REGISTRATION</RegistrationTitle>
       <RegistrationForm onSubmit={handleSubmit(onSubmit)}>
+        <RegistrationInputWrapper>
+          <RegistrationInput
+            placeholder="name"
+            {...register("name", { required: true })}
+          />
+          {errors.email && <span>This field is required</span>}
+        </RegistrationInputWrapper>
         <RegistrationInputWrapper>
           <RegistrationInput
             placeholder="e-mail"

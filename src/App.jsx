@@ -9,8 +9,8 @@ import { RotatingLines } from "react-loader-spinner";
 import { useState } from "react";
 import { OneCardDetail } from "./components/OneCardDetail/OneCardDetail";
 import { Basket } from "./pages/Basket/Basket";
-import Registration from "./pages/Login/Registration";
-import Login from "./pages/Login/Login";
+import Registration from "./pages/Sign/Registration";
+import Login from "./pages/Sign/Login";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);

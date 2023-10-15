@@ -57,7 +57,7 @@ export const UserNav = () => {
       <LoginoutWrapper>
         <Link to={"/login"}>
           <VscSignIn />
-          Signup
+          Signin
         </Link>
         {false && (
           <Link to={"/"}>
@@ -68,7 +68,7 @@ export const UserNav = () => {
         {true && (
           <Link to={"/registration"}>
             <GiArchiveRegister />
-            Signin
+            Signup
           </Link>
         )}
       </LoginoutWrapper>
