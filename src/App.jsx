@@ -9,6 +9,8 @@ import { RotatingLines } from "react-loader-spinner";
 import { useState } from "react";
 import { OneCardDetail } from "./components/OneCardDetail/OneCardDetail";
 import { Basket } from "./pages/Basket/Basket";
+import Registration from "./pages/Login/Registration";
+import Login from "./pages/Login/Login";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -48,6 +50,9 @@ function App() {
           <Route path="/shop/:id" element={<OneCardDetail />} />
           <Route path="/basket" element={<Basket />} />
           <Route path="/news" element={<News />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/login" element={<Login />} />
+
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>

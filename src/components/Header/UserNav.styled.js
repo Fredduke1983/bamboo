@@ -8,13 +8,18 @@ const AsideNav = styled.div`
 
   @media screen and (min-width: 320px) {
     justify-content: flex-end;
+    flex-wrap: wrap;
   }
 `;
 
-const AsideNavForm = styled.form`
+const AsideNavFind = styled.div`
   position: relative;
-  align-self: end;
-  margin-right: 10px;
+  margin-right: 8px;
+  @media screen and (min-width: 768px) {
+    top: 9px;
+    right: 80px;
+    position: absolute;
+  }
 `;
 const AsideNavInput = styled.input`
   @media screen and (min-width: 1280px) {
@@ -26,7 +31,7 @@ const AsideNavInput = styled.input`
   border: 1px solid grey;
   border-radius: 36px;
   width: 20px;
-  height: 38px;
+  height: 40px;
   background-color: #fafafa;
 
   transition: width 1s;
@@ -49,9 +54,10 @@ const AsideNavInput = styled.input`
 `;
 const AsideNavSubmit = styled.button`
   position: absolute;
-  background-color: transparent;
   top: 1px;
   right: 2px;
+
+  background-color: transparent;
   width: 39px;
   height: 39px;
   border: none;
@@ -67,12 +73,19 @@ const AsideNavSubmit = styled.button`
 `;
 
 const AsideNavBasket = styled.div`
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 9px;
+    right: 0;
+  }
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   border: 1px solid grey;
   border-radius: 36px;
   width: 70px;
+  height: 40px;
 `;
 
 const BasketBtn = styled(NavLink)`
@@ -94,11 +107,50 @@ const BasketBtn = styled(NavLink)`
   }
 `;
 
+const LoginoutWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  gap: 15px;
+
+  font-family: "Yellowtail", cursive;
+
+  @media screen and (min-width: 320px) {
+    width: 100%;
+
+    margin: 10px auto 0;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 0 0 0 20px;
+    width: inherit;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+
+    color: ${colors.mainTextColor};
+    transition: color 300ms;
+    &:hover {
+      color: ${colors.accentColor};
+    }
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+`;
+
 export {
   AsideNav,
-  AsideNavForm,
+  AsideNavFind,
   AsideNavInput,
   AsideNavSubmit,
   AsideNavBasket,
   BasketBtn,
+  LoginoutWrapper,
 };

@@ -6,6 +6,7 @@ export const colors = {
   socialsBgColor: "#EFF6F150",
   lightColor: "#e1d9f0",
   darkColor: "#ff0000",
+  bgColor: "#cccccc30",
 };
 
 // main - text - color: #274c5b; //* for light theme: logo + menu + cards text color *//

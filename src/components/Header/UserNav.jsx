@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
 import { FcSearch } from "react-icons/fc";
 import { IoIosBasket } from "react-icons/io";
+import { VscSignIn, VscSignOut } from "react-icons/vsc";
+import { GiArchiveRegister } from "react-icons/gi";
 
 import {
   AsideNav,
   AsideNavBasket,
-  AsideNavForm,
+  AsideNavFind,
   AsideNavInput,
   AsideNavSubmit,
   BasketBtn,
+  LoginoutWrapper,
 } from "./UserNav.styled";
 import { useSelector } from "react-redux";
 import { selectProductsAdded } from "../../redux/selectors";
+import { Link } from "react-router-dom";
 
 export const UserNav = () => {
   const [inputValue, setInputValue] = useState("");
@@ -32,7 +36,7 @@ export const UserNav = () => {
 
   return (
     <AsideNav>
-      <AsideNavForm>
+      <AsideNavFind>
         <AsideNavInput
           className={isEmptyInput ? "" : "no-empty"}
           type="text"
@@ -43,13 +47,31 @@ export const UserNav = () => {
         <AsideNavSubmit type="submit" onClick={handleSubmit}>
           <FcSearch size={25} />
         </AsideNavSubmit>
-      </AsideNavForm>
+      </AsideNavFind>
       <AsideNavBasket>
         <BasketBtn to={`/basket`} type="button">
           <IoIosBasket size={25} fill={"inherit"} />
         </BasketBtn>
         {addedProducts.length}
       </AsideNavBasket>
+      <LoginoutWrapper>
+        <Link to={"/login"}>
+          <VscSignIn />
+          Signup
+        </Link>
+        {false && (
+          <Link to={"/"}>
+            <VscSignOut />
+            Signout
+          </Link>
+        )}
+        {true && (
+          <Link to={"/registration"}>
+            <GiArchiveRegister />
+            Signin
+          </Link>
+        )}
+      </LoginoutWrapper>
     </AsideNav>
   );
 };

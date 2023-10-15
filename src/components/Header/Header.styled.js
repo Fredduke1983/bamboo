@@ -16,7 +16,7 @@ const rotateAnimation = keyframes`
 const MenuNavigationWrapper = styled.div``;
 
 const HeaderNav = styled.header`
-  padding: 20px 0;
+  position: relative;
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;
