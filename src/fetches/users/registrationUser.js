@@ -1,14 +1,10 @@
-import axios from "axios";
+import { baseAxios } from "./baseAxios";
 
-const baseAxios = axios.create({
-  baseURL: "https://bamboo-paradise-or8p.onrender.com/api",
-});
-
-const setToken = (token) => {
-  return (baseAxios.defaults.headers.common[
-    "Authorization"
-  ] = `Bearer ${token}`);
-};
+// const setToken = (token) => {
+//   return (baseAxios.defaults.headers.common[
+//     "Authorization"
+//   ] = `Bearer ${token}`);
+// };
 
 // const delToken = () =>
 //   delete baseAxios.defaults.headers.common["Authorization"];

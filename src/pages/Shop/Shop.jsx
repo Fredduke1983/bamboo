@@ -18,10 +18,11 @@ export const Shop = () => {
   }, [dispatch]);
 
   useEffect(() => {
+    // console.log("PRODUCTS", products);
     if (products.length < 1) {
       setProducts(allProducts);
     }
-  }, [allProducts, products.length]);
+  }, [allProducts, products]);
 
   return (
     <ShopStyled>

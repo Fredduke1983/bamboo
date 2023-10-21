@@ -11,7 +11,6 @@ export const productsSlice = createSlice({
       state.addedProducts.push(...newProduct);
     },
     deleteFromAddedProducts: (state, action) => {
-      //   console.log(action.payload);
       state.addedProducts = state.addedProducts.filter(
         (el) => el.keyId !== action.payload
       );

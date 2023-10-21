@@ -9,23 +9,23 @@ import {
   REGISTER,
   REHYDRATE,
 } from "redux-persist";
-// import storage from "redux-persist/lib/storage";
+import storage from "redux-persist/lib/storage";
 import { productsSlice } from "./Slices/ProductsSlice";
+import { userSlice } from "./Slices/UserSlice";
+import persistReducer from "redux-persist/es/persistReducer";
 
-// import { usersSlice } from "./Slices/UsersSlice";
-// import { contactsSlice } from "./Slices/ContactsSlice";
+const persistConfig = {
+  key: "root",
+  storage,
+  // whitelist: ['users'],
+  blacklist: ["password"],
+};
 
-// const persistConfig = {
-//   key: "root",
-//   storage,
-//   // whitelist: ['users'],
-// };
-
-// const persistedReducer = persistReducer(persistConfig, usersSlice.reducer);
+const persistedReducer = persistReducer(persistConfig, userSlice.reducer);
 
 const store = configureStore({
   reducer: {
-    // users: persistedReducer,
+    user: persistedReducer,
     products: productsSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
