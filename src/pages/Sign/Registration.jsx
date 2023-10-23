@@ -24,12 +24,12 @@ export default function Registration() {
   const dispatch = useDispatch();
 
   const onSubmit = async (data) => {
-    const res = await registrationUser(data);
-    if (!isNaN(res.data.statusCode)) {
-      toast.error(res.data.errorMsg);
-    } else {
-      toast.info(res.data.msg);
+    try {
+      const res = await registrationUser(data);
       dispatch(addNewUser(data));
+      toast.info(res.data.msg);
+    } catch (error) {
+      toast.error("Невірно введені дані або такий користувач вже існує");
     }
   };
 

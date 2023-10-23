@@ -15,7 +15,7 @@ export const registrationUser = async (newUser) => {
     // setToken(response.data.token);
     return response;
   } catch (error) {
-    return error.response;
+    return error;
   }
 };
 

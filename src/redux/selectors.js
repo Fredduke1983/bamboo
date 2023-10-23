@@ -4,7 +4,8 @@ const selectUserName = (state) => state.user.name;
 const selectUserEmail = (state) => state.user.name;
 const selectUserToken = (state) => state.user.token;
 const selectUserTestimonials = (state) => state.user.testimonials;
-const selectUserIsLoggedIn = (state) => state.user.isLoggedIn;
+const selectUserIsLoggedIn = (state) => state.user.isLoggedin;
+const selectIsLoading = (state) => state.user.isLoading;
 
 export {
   selectProducts,
@@ -14,4 +15,5 @@ export {
   selectUserToken,
   selectUserTestimonials,
   selectUserIsLoggedIn,
+  selectIsLoading,
 };

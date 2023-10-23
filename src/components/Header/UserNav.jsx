@@ -13,17 +13,29 @@ import {
   BasketBtn,
   LoginoutWrapper,
 } from "./UserNav.styled";
-import { useSelector } from "react-redux";
-import { selectProductsAdded } from "../../redux/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectProductsAdded,
+  selectUserIsLoggedIn,
+  selectUserName,
+} from "../../redux/selectors";
 import { Link } from "react-router-dom";
+import { logoutUserThunk } from "../../redux/reducers";
 
 export const UserNav = () => {
   const [inputValue, setInputValue] = useState("");
   const [isEmptyInput, setIsEmptyInput] = useState(true);
   const addedProducts = useSelector(selectProductsAdded);
+  const isLoggedIn = useSelector(selectUserIsLoggedIn);
+  const nameUser = useSelector(selectUserName);
+  const dispatch = useDispatch();
 
   const handleInput = (e) => {
     setInputValue(e.target.value);
+  };
+
+  const onClickHandleOut = () => {
+    dispatch(logoutUserThunk());
   };
 
   useEffect(() => {
@@ -54,22 +66,25 @@ export const UserNav = () => {
         </BasketBtn>
         {addedProducts.length}
       </AsideNavBasket>
+
       <LoginoutWrapper>
-        <Link to={"/login"}>
-          <VscSignIn />
-          Signin
-        </Link>
-        {false && (
-          <Link to={"/"}>
+        {isLoggedIn ? `Hello, ${nameUser}` : `Guest`}
+        {isLoggedIn ? (
+          <Link to={"/"} onClick={onClickHandleOut}>
             <VscSignOut />
             Signout
           </Link>
-        )}
-        {true && (
-          <Link to={"/registration"}>
-            <GiArchiveRegister />
-            Signup
-          </Link>
+        ) : (
+          <>
+            <Link to={"/login"}>
+              <VscSignIn />
+              Signin
+            </Link>
+            <Link to={"/registration"}>
+              <GiArchiveRegister />
+              Signup
+            </Link>
+          </>
         )}
       </LoginoutWrapper>
     </AsideNav>

@@ -1,5 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getProducts } from "../fetches/getProducts";
+import { loginUser } from "../fetches/users/loginUser";
+import { logoutUser } from "../fetches/users/logoutUser";
 
 export const getAllProductsThunk = createAsyncThunk(
   "bamboo/products",
@@ -9,14 +11,18 @@ export const getAllProductsThunk = createAsyncThunk(
   }
 );
 
-// export const loginUserThunk = createAsyncThunk(
-//   "users/logintUser",
-//   async (user) => {
-//     const data = await fetchLoginUser(user);
-//     return data;
-//   }
-// );
+export const loginUserThunk = createAsyncThunk(
+  "user/loginUser",
+  async (user) => {
+    const data = await loginUser(user);
+    return data;
+  }
+);
 
+export const logoutUserThunk = createAsyncThunk("user/logout", async () => {
+  await logoutUser();
+  return;
+});
 // export const getCurrentUserThunk = createAsyncThunk(
 //   "users/getUser",
 //   async (_, thunk) => {
@@ -24,11 +30,6 @@ export const getAllProductsThunk = createAsyncThunk(
 //     return data;
 //   }
 // );
-
-// export const getLogoutThunk = createAsyncThunk("users/logout", async () => {
-//   const data = await fetchLogoutUser();
-//   return data;
-// });
 
 // export const getContactsThunk = createAsyncThunk(
 //   "phonebook/getContacts",

@@ -6,17 +6,9 @@ const setToken = (token) => {
   ] = `Bearer ${token}`);
 };
 
-const delToken = () =>
-  delete baseAxios.defaults.headers.common["Authorization"];
-
 export const loginUser = async (user) => {
-  try {
-    const { data } = await baseAxios.post("/auth/login", user);
-    console.log("data :>> ", data);
-    setToken(data.token);
-    return data;
-  } catch (error) {
-    console.log("error 1:>> ", error);
-    return error.response.data.errorMsg;
-  }
+  const { data } = await baseAxios.post("/auth/login", user);
+  console.log("data LOGIN USER:>> ", data.user);
+  setToken(data.user.token);
+  return data;
 };

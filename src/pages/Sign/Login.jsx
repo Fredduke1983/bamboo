@@ -10,9 +10,11 @@ import {
   SignSubmit,
   SignTitle,
 } from "./Sign.styled";
-import { useDispatch } from "react-redux";
-import { signInUser } from "../../redux/Slices/UserSlice";
-import { loginUser } from "../../fetches/users/loginUser";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUserThunk } from "../../redux/reducers";
+import { useEffect } from "react";
+import { selectUserIsLoggedIn } from "../../redux/selectors";
+import { useNavigate } from "react-router";
 
 export default function Login() {
   const {
@@ -21,17 +23,25 @@ export default function Login() {
     // watch,
     formState: { errors },
   } = useForm();
+
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectUserIsLoggedIn);
 
   const onSubmit = async (data) => {
-    try {
-      const res = await loginUser(data);
-      dispatch(signInUser(res.user));
-      toast.info(`User ${res.user.name} loggedIn`);
-    } catch (error) {
-      console.log("error loginUser:>> ", error);
+    const response = await dispatch(loginUserThunk(data));
+    if (!response.payload) {
+      toast.error(
+        `Не існує такого користувача або введено невірні логін/пароль`
+      );
     }
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/home");
+    }
+  }, [isLoggedIn, navigate]);
 
   return (
     <SignFormWrapper>

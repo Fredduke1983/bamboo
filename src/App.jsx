@@ -11,9 +11,27 @@ import { OneCardDetail } from "./components/OneCardDetail/OneCardDetail";
 import { Basket } from "./pages/Basket/Basket";
 import Registration from "./pages/Sign/Registration";
 import Login from "./pages/Sign/Login";
+import { useSelector } from "react-redux";
+import { selectUserToken } from "./redux/selectors";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
+  // const isLoading = useSelector();
+
+  const userToken = useSelector(selectUserToken);
+  if (userToken) {
+    const token = userToken;
+    const payloadBase64 = token.split(".")[1];
+    const decodedPayload = atob(payloadBase64);
+    const payload = JSON.parse(decodedPayload);
+
+    const expirationTime = payload.exp;
+    const expirationDate = new Date(expirationTime * 1000);
+    const currentDate = new Date();
+    console.log("expirationDate", expirationDate > currentDate);
+    if (expirationDate < currentDate) {
+    }
+  }
 
   const toggleIsLoading = (load) => {
     setIsLoading(load);

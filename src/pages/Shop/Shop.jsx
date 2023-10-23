@@ -9,7 +9,6 @@ import { selectProducts } from "../../redux/selectors";
 
 export const Shop = () => {
   const [products, setProducts] = useState([]);
-
   const dispatch = useDispatch();
   const allProducts = useSelector(selectProducts);
 
@@ -18,7 +17,6 @@ export const Shop = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    // console.log("PRODUCTS", products);
     if (products.length < 1) {
       setProducts(allProducts);
     }
